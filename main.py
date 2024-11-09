@@ -18,13 +18,13 @@ def sync_folder(source, replica):
             os.makedirs(replica_root)
             logging.info(f"Created directory: {replica_root}")
 
-        # Copy files from source to replica folder
+        # Copy files from source to replica folder + update
         for file_name in files:
             source_file = os.path.join(root, file_name)
             replica_file = os.path.join(replica_root, file_name)
-            if not os.path.exists(replica_file):
+            if not os.path.exists(replica_file) or os.path.getmtime(source_file) > os.path.getmtime(replica_file):
                 shutil.copy2(source_file, replica_file)
-                logging.info(f"Copied file: {replica_file}")
+                logging.info(f"Copied/updated file: {replica_file}")
 
         for root, dirs, files in os.walk(replica, topdown=False):
             rel_path = os.path.relpath(root, replica)
