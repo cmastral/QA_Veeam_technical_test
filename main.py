@@ -26,6 +26,26 @@ def sync_folder(source, replica):
                 shutil.copy2(source_file, replica_file)
                 logging.info(f"Copied file: {replica_file}")
 
+        for root, dirs, files in os.walk(replica, topdown=False):
+            rel_path = os.path.relpath(root, replica)
+            source_root = os.path.join(source, rel_path)
+
+            # Remove files
+            for file_name in files:
+                replica_file = os.path.join(root, file_name)
+                source_file = os.path.join(source_root, file_name)
+                if not os.path.exists(source_file):
+                    os.remove(replica_file)
+                    logging.info(f"Removed file: {replica_file}")
+
+            # Remove directories
+            for dir_name in dirs:
+                replica_dir = os.path.join(root, dir_name)
+                source_dir = os.path.join(source_root, dir_name)
+                if not os.path.exists(source_dir):
+                    shutil.rmtree(replica_dir)
+                    logging.info(f"Removed directory: {replica_dir}")
+
 def periodic_synchronization(source, replica, interval):
     while True:
         sync_folder(source, replica)

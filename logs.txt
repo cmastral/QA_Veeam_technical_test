@@ -6,3 +6,6 @@
 2024-11-09 14:54:01,416 - Logging successful.
 2024-11-09 15:00:31,839 - Logging successful.
 2024-11-09 15:02:11,891 - Copied file: replica/./copy_test.txt
+2024-11-09 15:28:07,938 - Logging successful.
+2024-11-09 15:28:37,962 - Copied file: replica/./remove_text.txt
+2024-11-09 15:28:47,971 - Removed file: replica/remove_text.txt
