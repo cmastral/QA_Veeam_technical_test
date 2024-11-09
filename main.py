@@ -29,7 +29,7 @@ def sync_folder(source, replica):
 def periodic_synchronization(source, replica, interval):
     while True:
         sync_folder(source, replica)
-        time.sleep(10)    
+        time.sleep(interval)    
 
 parser = argparse.ArgumentParser(description="Folder Synchronization")
 parser.add_argument("source", type=str, help="Path to the source folder")
