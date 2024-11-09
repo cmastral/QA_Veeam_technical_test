@@ -1,2 +1,6 @@
 2024-11-09 14:40:36,326 - Logging successful.
 2024-11-09 14:41:32,961 - Logging successful.
+2024-11-09 14:52:02,882 - Logging successful.
+2024-11-09 14:52:32,663 - Copied file: replica/./hello.txt
+2024-11-09 14:52:32,663 - Created directory: replica/test_folder
+2024-11-09 14:54:01,416 - Logging successful.
