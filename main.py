@@ -2,6 +2,7 @@ import argparse
 import logging
 import shutil 
 import os
+import time
 
 def setup_logging(log_file):
     logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s", 
@@ -25,6 +26,10 @@ def sync_folder(source, replica):
                 shutil.copy2(source_file, replica_file)
                 logging.info(f"Copied file: {replica_file}")
 
+def periodic_synchronization(source, replica, interval):
+    while True:
+        sync_folder(source, replica)
+        time.sleep(10)    
 
 parser = argparse.ArgumentParser(description="Folder Synchronization")
 parser.add_argument("source", type=str, help="Path to the source folder")
@@ -43,4 +48,4 @@ setup_logging(args.log_file)
     
 # Test logging
 logging.info("Logging successful.")
-sync_folder(args.source, args.replica)
+periodic_synchronization(args.source, args.replica, args.interval)

@@ -4,3 +4,5 @@
 2024-11-09 14:52:32,663 - Copied file: replica/./hello.txt
 2024-11-09 14:52:32,663 - Created directory: replica/test_folder
 2024-11-09 14:54:01,416 - Logging successful.
+2024-11-09 15:00:31,839 - Logging successful.
+2024-11-09 15:02:11,891 - Copied file: replica/./copy_test.txt
