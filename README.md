@@ -41,3 +41,4 @@ Additionally, regarding processing, for large folders with many files, the synch
 
 
 ## Personal Note 
+Honestly, I’m pretty new to this type of role, but I decided to start the task in Python since it’s the language I’m most comfortable with. I broke the problem down into smaller steps one piece at a time. I tried to figure out each part, like handling the command-line arguments, setting up the logging, and actually syncing the folders. Whenever I came across something I wasn’t sure about, I just looked it up and tried to work it into the solution. Overall, it’s been a great hands on way to get more comfortable with automation and I hope we have the chance to discuss more about it. :) 
