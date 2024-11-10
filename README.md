@@ -30,5 +30,14 @@ python main.py /path/to/source/folder /path/to/replica/folder 10 /path/to/logs.t
 I used a 10 seconds internval between each sync for quicker testing but it can be set based on the task. 
 
 ## Process and Potential Improvements 
+I chose to complete the task in Python because it's the language I'm most comfortable with and have been working with the last few years. I tried to approach this task step by step and testing each part incrementally.
+
+I started by verifying that the script could accept command-line arguments and that logging worked properly, with output both to the console and to the log file. The main synchronization function was built step-by-step to handle copying, updating, and deleting files and folders as needed. I implemented checks to ensure that only new or updated files would be copied, and that extra files in the replica folder would be deleted. I let the logs and the test files in the repository for your reference. Finally, I wrapped the sync function in a loop with time.sleep(interval) to allow for periodic syncing each specified interval.
+
+**Potential Improvements:**
+
+Currently, the script doesn’t take into account issues like file permission errors, network errors, or other unexpected situations. 
+Additionally, regarding processing, for large folders with many files, the synchronization could be improved by using multi-threading or asynchronous processing to speed up file management. 
+
 
 ## Personal Note 
